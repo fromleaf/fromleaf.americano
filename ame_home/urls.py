@@ -22,4 +22,5 @@ from .views import *
 
 urlpatterns = [
     url(r'^', HomeMainView.as_view(), name='home'),
+    url(r'^2/$', HomeMainView_2.as_view(), name='home2'),
 ]
