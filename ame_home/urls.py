@@ -24,7 +24,5 @@ from .views import *
 
 urlpatterns = [
     url(r'^', HomeMainView.as_view(), name='home'),
-    url(r'^2/$', HomeMainView_2.as_view(), name='home2'),
 ]
-if settings.DEBUG is True:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
