@@ -19,12 +19,11 @@ class HomeView(TemplateView):
         result_json = json.load(mydata_file)
 
         context['about'] = result_json['about']
+        context['skill'] = result_json['skill']
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
 
         self.set_about_context(context)
-
-        print(context)
 
         return context
