@@ -1,24 +1,30 @@
 # -*- coding: utf-8 -*-
 
-from django.views.generic import TemplateView
+import simplejson as json
 
+from django.views.generic import TemplateView
+from django.conf import settings
+
+from ame_common import utils
 from .models import *
 
-class HomeMainView(TemplateView):
+
+class HomeView(TemplateView):
     template_name = "ame_home/home.html"
 
+    def set_about_context(self, context):
+        path = settings.BASE_DIR + '/static/my_data/'
+
+        mydata_file = utils.read_file_from_local(path, 'mydata.json')
+        result_json = json.load(mydata_file)
+
+        context['about'] = result_json['about']
+
     def get_context_data(self, **kwargs):
-        context = super(HomeMainView, self).get_context_data(**kwargs)
+        context = super(HomeView, self).get_context_data(**kwargs)
 
-        about = About.objects.get(id=1)
-        programming_skills = Skill.objects.filter(
-            skill_set__title='programming').prefetch_related('skill_set')
-        coworking_skills = Skill.objects.filter(
-            skill_set__title='coworking').prefetch_related('skill_set')
+        self.set_about_context(context)
 
-        context['about'] = about
-        context['programming_skills'] = programming_skills
-        context['coworking_skills'] = coworking_skills
+        print(context)
 
         return context
-

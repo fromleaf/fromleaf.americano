@@ -161,6 +161,7 @@ if DEBUG:
         # However, you have to set the other STATIC_ROOR path
         # ex) os.path.join(BASE_DIR, 'somewhere')
         os.path.join(BASE_DIR, 'static'),
+        os.path.join(BASE_DIR, 'static/assets'),
     ]
 else:
     STATIC_ROOT = '/static/'
