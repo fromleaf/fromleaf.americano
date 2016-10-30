@@ -1,6 +1,11 @@
 .idea/
 logs/
+*/migrations/
+static/my_data/
+static/resume/
+static/photos/
 
 fromleaf.americano.iml
 *.pyc
 dump.rdb
+static/contact.php
