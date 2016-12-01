@@ -14,6 +14,6 @@ def read_file_from_local(path, file):
         read_file = open(file_path, 'r')
 
         return read_file
-
     except OSError as e:
+        print('print read file: {}'.format(read_file))
         logger.error(e)

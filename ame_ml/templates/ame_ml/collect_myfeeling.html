@@ -1,0 +1,58 @@
+{% extends 'ame_ml/base.html' %}
+
+{% load staticfiles %}
+
+
+{% block main_content %}
+    <p>This page is collect my feeling</p>
+
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Daily My Feeling Data</div>
+            <div class="panel-body">
+                <!-- Table -->
+                <table class=table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Morning</th>
+                            <th>Afternoon</th>
+                            <th>Evening</th>
+                            <th>After Breakfast</th>
+                            <th>After Lunch</th>
+                            <th>After Dinner</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for myfeeling in myfeelings %}
+                            <tr>
+                                <th scope=row>{{ forloop.counter }}</th>
+                                <td>{{ myfeeling.created_date | date:"Y-m-d"}}</td>
+                                <td>{{ myfeeling.morning }}</td>
+                                <td>{{ myfeeling.afternoon }}</td>
+                                <td>{{ myfeeling.evening }}</td>
+                                <td>{{ myfeeling.after_breakfast }}</td>
+                                <td>{{ myfeeling.after_lunch }}</td>
+                                <td>{{ myfeeling.after_dinner }}</td>
+                                <td>{{ myfeeling.grade }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-8">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+{% endblock %}

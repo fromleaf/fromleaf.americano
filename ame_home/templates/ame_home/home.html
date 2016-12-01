@@ -4,17 +4,34 @@
 
 {% block main_content %}
 
+{#    <section id="home" class="jumbotron">#}
+{#        <div class="container">#}
+{#            <div class="message-box clearfix">#}
+{#                <div class="left-col">#}
+{#                    <p>안녕하세요.<br>저는 <span>허 윤</span> 입니다.<br/>그리고 저는</p>#}
+{#                </div>#}
+{#                <div class="right-col flexslider home-slider" style="z-index:1;">#}
+{#                    <ul class="slides">#}
+{#                        <li class="col-xs-12 col-sm-12 col-md-12"><p>좋은 개발자<font size="3">(되고 싶어요.)</font></p></li>#}
+{#                        <li class="col-xs-12 col-sm-12 col-md-12"><p>좋은 동료<font size="3">(되고 싶어요.)</font></p></li>#}
+{#                        <li class="col-xs-12 col-sm-12 col-md-12"><p>좋은 사람<font size="3">(되고 싶어요.)</font></p></li>#}
+{#                    </ul>#}
+{#                </div><!--End home-slider -->#}
+{#            </div><!--End message-box -->#}
+{#        </div><!--End container -->#}
+{#    </section><!--End header -->#}
+
     <section id="home" class="jumbotron">
         <div class="container">
-            <div class="message-box clearfix">
+            <div class="message-box clearfix" style="width: 100%;">
                 <div class="left-col">
-                    <p>안녕하세요.<br>저는 <span>허 윤</span> 입니다.<br/>그리고 저는</p>
-                </div>
+						<p>I AM <span>HEO YOON</span><br/>and I want to be </p>
+					</div>
                 <div class="right-col flexslider home-slider" style="z-index:1;">
                     <ul class="slides">
-                        <li class="col-xs-12 col-sm-12 col-md-12"><p>좋은 개발자<font size="3">(되고 싶어요.)</font></p></li>
-                        <li class="col-xs-12 col-sm-12 col-md-12"><p>좋은 동료<font size="3">(되고 싶어요.)</font></p></li>
-                        <li class="col-xs-12 col-sm-12 col-md-12"><p>좋은 사람<font size="3">(되고 싶어요.)</font></p></li>
+                        <li class="col-xs-12 col-sm-12 col-md-12"><p>a Good Developer</p></li>
+                        <li class="col-xs-12 col-sm-12 col-md-12"><p>a Good Colleague</p></li>
+                        <li class="col-xs-12 col-sm-12 col-md-12"><p>a Good Person</p></li>
                     </ul>
                 </div><!--End home-slider -->
             </div><!--End message-box -->
@@ -25,11 +42,9 @@
 
     {% include 'ame_home/skill.html' %}
 
-    {% include 'ame_home/work.html' %}
+    {% include 'ame_home/experience.html' %}
 
     {% include 'ame_home/project.html' %}
-
-    {% include 'ame_home/education.html' %}
 
     {% include 'ame_home/contact.html' %}
 
