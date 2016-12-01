@@ -21,6 +21,10 @@ from django.conf.urls import url
 from .views import *
 
 urlpatterns = [
-    url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^$', MLHomeView.as_view(), name='ml_home'),
+    url(r'^myfeeling/collect/$', CollectMyFeelingView.as_view(),
+        name='collect_myfeeling'),
+    url(r'^myfeeling/classification/$', ClassificationMyFeelingView.as_view(),
+        name='classification_myfeeling'),
 ]
 

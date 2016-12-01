@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     # our apps
     'ame_common',
     'ame_home',
+    'ame_play',
+    'ame_ml',
 
     # third party apps
     'storages',
@@ -113,6 +115,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '3306',
     },
+    
 }
 
 
@@ -231,6 +234,7 @@ LOGGING = {
     }
 }
 
+ENG_VERSION = True
 
 if DEBUG:
     # will output to your console

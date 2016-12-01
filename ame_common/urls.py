@@ -17,11 +17,20 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from ame_home import urls as home_url
+
+from ame_home import urls as home_urls
+from ame_play import urls as play_urls
+from ame_ml import urls as ml_urls
 
 urlpatterns = [
     # my portfolio urls
-    url(r'^', include(home_url)),
+    url(r'^', include(home_urls)),
+
+    # my playground urls
+    url(r'^play/', include(play_urls)),
+
+    # practise ml
+    url(r'^ml/', include(ml_urls)),
 
     # admin url
     url(r'^admin/', admin.site.urls),

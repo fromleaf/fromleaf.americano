@@ -57,7 +57,7 @@ $(document).ready(function() {
 	/*============================================
 	Skills Functions
 	==============================================*/
-	var aboutColor = $('#about').css('backgroundColor');
+	var aboutColor = $('#skills').css('backgroundColor');
 
 	$('#skills').waypoint(function(){
 		$('.chart').each(function(){
@@ -66,7 +66,7 @@ $(document).ready(function() {
 				animate: 2000,
 				lineCap:'butt',
 				scaleColor: false,
-				barColor: aboutColor,
+				barColor: '#70E3FF',
 				lineWidth: 10
 			});
 		});
